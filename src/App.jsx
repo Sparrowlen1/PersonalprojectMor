@@ -1,3 +1,4 @@
+// src/App.jsx
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ProductProvider } from './context/ProductContext';
 import Navbar from './components/Navbar';
@@ -10,13 +11,17 @@ function App() {
   return (
     <ProductProvider>
       <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/products" element={<ProductsPage />} />
-          <Route path="/add-product" element={<AddProductPage />} />
-          <Route path="/edit-product/:id" element={<EditProductPage />} />
-        </Routes>
+        <div className="min-h-screen bg-gray-50">
+          <Navbar />
+          <main>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/products" element={<ProductsPage />} />
+              <Route path="/add-product" element={<AddProductPage />} />
+              <Route path="/edit-product/:id" element={<EditProductPage />} />
+            </Routes>
+          </main>
+        </div>
       </BrowserRouter>
     </ProductProvider>
   );

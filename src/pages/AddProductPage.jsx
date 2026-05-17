@@ -1,3 +1,4 @@
+// src/pages/AddProductPage.jsx
 import { useNavigate } from 'react-router-dom';
 import { useProducts } from '../context/ProductContext';
 import { postData } from '../hooks/useFetch';
@@ -13,11 +14,11 @@ const AddProductPage = () => {
       addProduct(newProduct);
       navigate('/products');
     } catch (error) {
-      console.error('Howdy! Failed to add product', error);
+      console.error('Failed to add product', error);
     }
   };
 
-  return <ProductForm onSubmit={handleSubmit} buttonText="Add Product" />;
+  return <ProductForm onSubmit={handleSubmit} buttonText="Add New Product" />;
 };
 
 export default AddProductPage;

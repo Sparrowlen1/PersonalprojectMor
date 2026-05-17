@@ -1,3 +1,4 @@
+// src/hooks/useFetch.js
 import { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 
@@ -11,10 +12,12 @@ export const useFetch = (endpoint) => {
   const fetchData = useCallback(async () => {
     setLoading(true);
     try {
-      const res = await axios.get(`${API}/${endpoint}`);
-      setData(res.data);
+      const response = await axios.get(`${API}/${endpoint}`);
+      setData(response.data);
+      setError(null);
     } catch (err) {
       setError(err.message);
+      console.error('Fetch error:', err);
     } finally {
       setLoading(false);
     }
@@ -28,11 +31,16 @@ export const useFetch = (endpoint) => {
 };
 
 export const postData = async (endpoint, data) => {
-  const res = await axios.post(`${API}/${endpoint}`, data);
-  return res.data;
+  const response = await axios.post(`${API}/${endpoint}`, data);
+  return response.data;
 };
 
 export const patchData = async (endpoint, id, data) => {
-  const res = await axios.patch(`${API}/${endpoint}/${id}`, data);
-  return res.data;
+  const response = await axios.patch(`${API}/${endpoint}/${id}`, data);
+  return response.data;
+};
+
+export const deleteData = async (endpoint, id) => {
+  const response = await axios.delete(`${API}/${endpoint}/${id}`);
+  return response.data;
 };

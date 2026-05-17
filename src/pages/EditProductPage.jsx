@@ -1,3 +1,4 @@
+// src/pages/EditProductPage.jsx
 import { useParams, useNavigate } from 'react-router-dom';
 import { useProducts } from '../context/ProductContext';
 import { patchData } from '../hooks/useFetch';
@@ -15,11 +16,15 @@ const EditProductPage = () => {
       updateProduct({ ...updated, id: parseInt(id) });
       navigate('/products');
     } catch (error) {
-      console.error('Howdy! Failed to update product', error);
+      console.error('Failed to update product', error);
     }
   };
 
-  if (!product) return <div className="text-center py-12">Product not found</div>;
+  if (!product) return (
+    <div className="text-center py-16">
+      <p className="text-gray-500">Product not found</p>
+    </div>
+  );
 
   return <ProductForm initialData={product} onSubmit={handleSubmit} buttonText="Update Product" />;
 };
