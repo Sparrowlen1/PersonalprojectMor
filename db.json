@@ -5,7 +5,7 @@
       "name": "Vanilla Bean",
       "description": "Medium Roast with smooth vanilla notes",
       "origin": "Colombia",
-      "price": 10.00,
+      "price": 10,
       "category": "Medium Roast",
       "stock": 25
     },
@@ -14,15 +14,24 @@
       "name": "House Blend",
       "description": "Dark Roast with rich chocolate notes",
       "origin": "Vietnam",
-      "price": 12.00,
+      "price": 12,
       "category": "Dark Roast",
       "stock": 18
+    },
+    {
+      "name": "Sparrowlen",
+      "description": "mlm",
+      "origin": "kenya",
+      "price": 212,
+      "category": "Medium Roast",
+      "stock": 10,
+      "id": 3
     }
   ],
   "store": {
     "id": 1,
     "name": "Coffee R Us",
     "description": "Premium coffee beans from around the world",
-    "phone": "555-1234"
+    "phone": "0740063099"
   }
 }

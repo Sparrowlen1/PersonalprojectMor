@@ -14,7 +14,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center gap-2">
             <Coffee size={28} />
-            <h1 className="text-xl font-bold">Coffee R Us Admin</h1>
+            <h1 className="text-xl font-bold">Sparrowlen</h1>
           </div>
           <div className="flex gap-6">
             {links.map(({ to, label, icon: Icon }) => (
