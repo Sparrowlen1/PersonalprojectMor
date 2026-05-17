@@ -1,4 +1,3 @@
-// src/components/Navbar.jsx
 import { NavLink } from 'react-router-dom';
 import { Home, Package, PlusCircle, ShoppingBag, Users } from 'lucide-react';
 
@@ -6,12 +5,12 @@ const Navbar = () => {
   const links = [
     { to: '/', label: 'Home', icon: Home },
     { to: '/products', label: 'Products', icon: Package },
-    { to: '/add-product', label: 'Add Product', icon: PlusCircle }
+    { to: '/add', label: 'Add', icon: PlusCircle }
   ];
 
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50 border-b border-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="bg-white shadow-md sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center gap-2">
             <div className="bg-indigo-600 p-1.5 rounded-lg">

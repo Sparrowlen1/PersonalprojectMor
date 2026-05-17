@@ -1,55 +1,43 @@
-// src/components/ProductForm.jsx
 import { useState } from 'react';
-import { Package, MapPin, DollarSign, Layers, Box, Image as ImageIcon } from 'lucide-react';
+import { Package, MapPin, DollarSign, Layers, Box, Image } from 'lucide-react';
 
-const ProductForm = ({ initialData, onSubmit, buttonText }) => {
-  const [form, setForm] = useState(initialData || {
+const ProductForm = ({ initial, onSubmit, btnText }) => {
+  const [form, setForm] = useState(initial || {
     name: '', description: '', origin: '', price: '', category: '', stock: '', splash: ''
   });
 
   const fields = [
-    { name: 'name', label: 'Product Name', icon: Package, type: 'text', placeholder: 'Wireless Headphones' },
-    { name: 'description', label: 'Description', icon: Layers, type: 'text', placeholder: 'Product details...' },
-    { name: 'origin', label: 'Origin Country', icon: MapPin, type: 'text', placeholder: 'China, Vietnam, etc.' },
-    { name: 'price', label: 'Price (USD)', icon: DollarSign, type: 'number', step: '0.01', placeholder: '49.99' },
-    { name: 'category', label: 'Category', icon: Box, type: 'text', placeholder: 'Electronics, Accessories' },
-    { name: 'stock', label: 'Stock Quantity', icon: Box, type: 'number', placeholder: '100' },
-    { name: 'splash', label: 'Image URL', icon: ImageIcon, type: 'text', placeholder: 'https://images.unsplash.com/...' }
+    { name: 'name', label: 'Product Name', icon: Package, type: 'text' },
+    { name: 'description', label: 'Description', icon: Layers, type: 'text' },
+    { name: 'origin', label: 'Origin Country', icon: MapPin, type: 'text' },
+    { name: 'price', label: 'Price (KES)', icon: DollarSign, type: 'number' },
+    { name: 'category', label: 'Category', icon: Box, type: 'text' },
+    { name: 'stock', label: 'Stock Quantity', icon: Package, type: 'number' },
+    { name: 'splash', label: 'Image URL', icon: Image, type: 'text' }
   ];
 
-  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onSubmit({ ...form, price: parseFloat(form.price), stock: parseInt(form.stock) });
-  };
-
   return (
-    <div className="max-w-3xl mx-auto py-8 px-4">
-      <div className="bg-white rounded-2xl shadow-lg p-6">
-        <h2 className="text-2xl font-bold text-gray-800 mb-6">{buttonText}</h2>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          {fields.map(({ name, label, icon: Icon, ...props }) => (
-            <div key={name}>
-              <label className="block text-sm font-medium text-gray-700 mb-1">{label}</label>
-              <div className="relative">
-                <Icon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
-                <input
-                  {...props}
-                  name={name}
-                  value={form[name]}
-                  onChange={handleChange}
-                  required={name !== 'splash'}
-                  className="w-full pl-10 pr-3 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-                />
-              </div>
+    <div className="max-w-2xl mx-auto px-4 py-8">
+      <form onSubmit={(e) => { e.preventDefault(); onSubmit(form); }} className="bg-white rounded-xl shadow-md p-6">
+        <h2 className="text-2xl font-bold mb-4">{btnText}</h2>
+        {fields.map(f => (
+          <div key={f.name} className="mb-3">
+            <label className="block text-sm font-medium text-gray-700 mb-1">{f.label}</label>
+            <div className="relative">
+              <f.icon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
+              <input
+                type={f.type}
+                placeholder={f.label}
+                value={form[f.name]}
+                onChange={(e) => setForm({ ...form, [f.name]: e.target.value })}
+                className="w-full pl-10 pr-3 p-2 border rounded-lg focus:ring-2 focus:ring-indigo-500"
+                required={f.name !== 'splash'}
+              />
             </div>
-          ))}
-          <button type="submit" className="w-full bg-indigo-600 text-white py-3 rounded-xl hover:bg-indigo-700 transition font-semibold">
-            {buttonText}
-          </button>
-        </form>
-      </div>
+          </div>
+        ))}
+        <button className="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 mt-2">{btnText}</button>
+      </form>
     </div>
   );
 };

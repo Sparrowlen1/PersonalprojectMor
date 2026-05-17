@@ -2,10 +2,10 @@
   "products": [
     {
       "id": 1,
-      "name": "Wireless Pro Headphones",
+      "name": "Wireless Headphones",
       "description": "Noise canceling with 30hr battery life",
       "origin": "China",
-      "price": 3000,
+      "price": 12999,
       "category": "Electronics",
       "stock": 45,
       "splash": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400"
@@ -15,7 +15,7 @@
       "name": "Minimalist Backpack",
       "description": "Waterproof laptop backpack 15 inch",
       "origin": "Vietnam",
-      "price": 600,
+      "price": 5499,
       "category": "Accessories",
       "stock": 120,
       "splash": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400"
@@ -25,20 +25,10 @@
       "name": "Smart Watch Ultra",
       "description": "Fitness tracker with heart rate monitor",
       "origin": "China",
-      "price": 3500,
+      "price": 18999,
       "category": "Electronics",
       "stock": 28,
       "splash": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400"
-    },
-    {
-      "id": 4,
-      "name": "Premium Sneakers",
-      "description": "Comfortable running shoes for all terrains",
-      "origin": "Vietnam",
-      "price": 1500,
-      "category": "Footwear",
-      "stock": 65,
-      "splash": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400"
     }
   ],
   "store": {
@@ -46,6 +36,7 @@
     "tagline": "Global Dropshipping Made Simple",
     "description": "Curated products from trusted suppliers worldwide",
     "email": "Sparrowlen13@gmail.com",
-    "splash": "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1200"
+    "phone": "+254 740063099",
+    "location": "Nairobi, Kenya"
   }
 }
