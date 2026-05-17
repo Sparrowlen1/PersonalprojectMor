@@ -1,0 +1,28 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Vanilla Bean",
+      "description": "Medium Roast with smooth vanilla notes",
+      "origin": "Colombia",
+      "price": 10.00,
+      "category": "Medium Roast",
+      "stock": 25
+    },
+    {
+      "id": 2,
+      "name": "House Blend",
+      "description": "Dark Roast with rich chocolate notes",
+      "origin": "Vietnam",
+      "price": 12.00,
+      "category": "Dark Roast",
+      "stock": 18
+    }
+  ],
+  "store": {
+    "id": 1,
+    "name": "Coffee R Us",
+    "description": "Premium coffee beans from around the world",
+    "phone": "555-1234"
+  }
+}
